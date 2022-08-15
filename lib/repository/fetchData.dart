@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../data/my_location.dart';
 import '../data/network.dart';
-import 'weather_screen.dart';
+import '../screens/weather_screen.dart';
 
 const apiKey = '0d0cc1131b44cd6ea0027e60e69dc007';
 
-class Loading extends StatefulWidget {
-  const Loading({Key? key}) : super(key: key);
+class FetchData extends StatefulWidget {
+  const FetchData({Key? key}) : super(key: key);
 
   @override
-  State<Loading> createState() => _LoadingState();
+  State<FetchData> createState() => _LoadingState();
 }
 
-class _LoadingState extends State<Loading> {
+class _LoadingState extends State<FetchData> {
   double? latitude3;
   double? longitude3;
 
@@ -52,21 +52,6 @@ class _LoadingState extends State<Loading> {
       );
     }));
   }
-
-  // void fetchData() async{
-  //
-  //     var myJson = parsingData['weather'][0]['description'];
-  //     print(myJson);
-  //
-  //     var wind = parsingData['wind']['speed'];
-  //     print(wind);
-  //
-  //     var id =parsingData['id'];
-  //     print(id);
-  //   }else{
-  //     print(response.statusCode);
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
